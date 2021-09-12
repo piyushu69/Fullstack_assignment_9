@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 9</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <style>
+        body{
+            background-color: rgb(112, 141, 196);
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        
+        .header ul{
+            display: flex;
+            list-style: none;
+            justify-content:right;
+            margin-left: -45px;
+            align-items: center;
+            font-size: 30px;
+            background-color: gray;
+            height: 70px;
+            color: white;
+            margin-top: 0px;
+            position: fixed;
+            width: 100%;
+            margin-bottom: 20px;
+            /* border-radius: 10px; */
+        }
+        
+        .header ul li.list-item a{
+            margin:10px 20px;
+            padding:10px 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .header ul li.list-item a:hover{
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            border: 2px solid gainsboro;
+        }
+        .image{
+            display: flex;
+            background: url(./pexels-fox-1038916.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+           height: 90vh;
+           width:100vw;
+           margin-left: -20px;           
+        }
+        .image h2{
+            color: white;
+            font-size: 60px;
+            margin-left: 20px;
+            margin-top: 95px;
+        }
+        .team div.team-pics{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height: 300px;
+            width: 300px; */
+            border-radius: 50%;
+        }
+        .team div.team-pics img{
+            margin-left: 70px;
+            height: 300px;
+            width: 300px;
+            margin: 20px 20px;
+
+            border-radius: 50%;
+
+        }
+        .team h2{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 85px;
+        }
+        h2{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 85px;
+        }
+        .team{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about .data{
+            background-color: grey;
+            color: white;
+            height: 100h;
+            font-size: 20px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            border-radius: 20px;
+        }
+        .about .project .project-img1{
+            background:url(https://www.publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50vw;
+            height: 200px;
+            margin: -30px 10px;
+            border-radius: 20px;
+        }
+        .about .project .project-img2{
+            background:url(https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50vw;
+            height: 200px;
+            margin: 50px 10px;
+            border-radius: 20px;
+        }
+        .about .project .project-img3{
+            background:url(https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvamVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50vw;
+            height: 200px;
+            margin: -30px 10px;
+            border-radius: 20px;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 130px;
+            margin-bottom: 50px;
+            
+        }
+        .about .project h3{
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+        }
+        .box{
+            width:20%;
+            background-color:white;
+            margin:15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 25px;
+            padding: 20px;
+            
+        }
+        .box img{
+            height:100%;
+            width:90%;
+            border-radius: 25px;
+            
+        }
+        .box h2{
+            text-align: center;
+            font-size: 23px;
+            margin: 15px;
+        }
+        .box a{
+            background-color: blue;
+            text-decoration: none;
+            color:white;
+            padding:10px;
+            justify-content: center;
+            text-align: center;
+            border-radius: 20px;
+        }
+        .box a:hover{
+            background-color:red;
+        }
+        .contact .footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 20px;
+            padding-bottom: 15px;
+            width: 100vw;
+            height: 100px;
+            background-color: rgb(206, 168, 206);
+        }
+        .side-bar{
+            background-color: rgb(43, 41, 41);
+            height: 60vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            right: -100%;
+            
+            display: none;
+            
+        }
+        .side-bar ul li.list-item{
+            list-style: none;
+            margin: 5px 10px;
+            padding: 10px 10px;
+
+        }
+        .side-bar ul li.list-item a{
+            margin:10px 20px;
+            padding:20px 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 35px;
+        }
+        .side-bar ul li.list-item a:hover{
+           border-left: 10px solid white;
+        }
+        #chk{
+            display: none;
+        }
+        .show-btn,.hide-btn{
+            color: white;
+            font-size: 30px;
+            position: fixed;
+            top: 30px;
+            right: 50px;
+            display: none;
+        }
+        /* #chk:checked ~ .side-bar{
+            right: 0;
+
+        } */
+        @media screen and (max-width:950px){
+            
+            .header ul li{
+                display: none;
+            }
+            .header ul li a{
+                display: none;
+            }
+            .show-btn{
+                display: block;
+            }
+            #chk:checked ~ .header ul{
+            right: 0;
+           
+        }
+        #chk{
+            display: none;
+        }
+            .side-bar{
+                right: -100%;
+                transition: .5s;
+                background-color: rgb(43, 41, 41);
+            height: 60vh;
+            width: 100%;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            z-index: 5;
+            right: -100%;
+            }
+            
+        .hide-btn{
+            position: absolute;
+            float: right;
+        }
+
+            .team div.team-pics{
+                display: grid;
+                grid-template-areas: 'pic1 pic2'
+                'pic3 pic4';
+            }
+            .team div.team-pics #pic1{
+                grid-area: pic1;
+            }
+            .team div.team-pics #pic2{
+                grid-area: pic2;
+            }
+            .team div.team-pics #pic3{
+                grid-area: pic3;
+            }
+            .team div.team-pics #pic4{
+                grid-area: pic4;
+            }
+            
+            .about{
+                display: flex;
+                flex-direction: column;
+               
+            }
+            
+            .about div.project div.project-img1,
+            .about div.project div.project-img2,
+            .about div.project div.project-img3{
+                width: 95vw;
+               
+            }
+
+            .about div.data p{
+                margin-bottom: 100px;
+            }
+
+           
+            /* .box{
+                display: grid;
+                grid-template-areas: 'card1 card2'
+                'card3 card4';
+            }
+            .box div#card1{
+                grid-area: card1;
+            }
+            .box div#card2{
+                grid-area: card2;
+            }
+            .box div#card3{
+                grid-area: card3;
+            }
+            .box div#card4{
+                grid-area: card4;
+            } */
+            
+        }
+        @media screen and (max-width:500px){
+            .team div.team-pics{
+                display: grid;
+                grid-template-areas: 'pic1'
+                 'pic2'
+                'pic3' 
+                'pic4';
+            }
+            .team div.team-pics #pic1{
+                grid-area: pic1;
+            }
+            .team div.team-pics #pic2{
+                grid-area: pic2;
+            }
+            .team div.team-pics #pic3{
+                grid-area: pic3;
+            }
+            .team div.team-pics #pic4{
+                grid-area: pic4;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        
+        <ul>
+            <input type="checkbox" name="" id="chk">
+        
+        <label for="chk" class="show-btn">
+        <i class="fa fa-bars"></i>
+        </label>
+            <li class="list-item"><a href="#home">
+                Home
+            </a>
+            </li>
+            <li class="list-item"><a href="#about">
+                About us
+            </a>
+            </li>
+            <li class="list-item"><a href="#team">
+                Our Team
+            </a>
+            </li>
+            <li class="list-item"><a href="#technology">
+                Technologies
+            </a>
+            </li>
+            <li class="list-item"><a href="#contact">
+                Contact us
+            </a>
+        </li>
+        
+        <label for="chk" class="hide-btn">
+            <i class="fa fa-times"></i>
+            </label>
+        
+    </ul>
+</header>
+
+
+
+<div class="side-bar">
+    <ul>
+        
+        
+        
+
+            <li class="list-item"><a href="#home">
+                Home
+            </a>
+            </li>
+            <li class="list-item"><a href="#about">
+                About us
+            </a>
+            </li>
+            <li class="list-item"><a href="#team">
+                Our Team
+            </a>
+            </li>
+            <li class="list-item"><a href="#technology">
+                Technologies
+            </a>
+            </li>
+            <li class="list-item"><a href="#contact">
+                Contact us
+            </a>
+        </ul>
+    </div>
+
+
+
+    <a name="home"></a>
+    <div class="image">
+        <a id="#home"></a>
+        <h2>Practical-9</h2>
+       
+    </div>
+
+    <a name="team"></a>
+    <h2>Team Members</h2>
+    <div class="team">
+        <div class="team-pics">
+            <img id="pic1"  src="https://m.media-amazon.com/images/I/41jLBhDISxL._SY355_.jpg" alt="">
+            <img id="pic2" src="https://m.media-amazon.com/images/I/41mSIgdsHvL.jpg" alt="">
+            <img id="pic3" src="https://m.media-amazon.com/images/I/41r0oAaPp0L._AC_.jpg" alt="">
+            <img id="pic4" src="https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg" alt="">
+        </div>
+    </div>
+
+    <a name="about"></a>
+    <h1>About us</h1>
+    <div class="about">
+        <div class="data">
+            <h2>About Projects</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nisi, repellendus rem deserunt, a, veritatis iusto odit incidunt debitis enim doloremque totam aliquam fuga voluptatibus quos natus quibusdam? Quia dolores asperiores sequi vel porro voluptatibus aut quidem ipsam temporibus. Voluptatum voluptate animi, esse delectus tenetur ipsa a ad perferendis quidem.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi esse dolorum odio ad culpa quae placeat eos, temporibus, voluptatibus amet assumenda maxime quaerat sunt inventore deserunt ab maiores porro odit error laborum magni incidunt similique. Consequatur non in laborum consequuntur itaque, neque fuga excepturi atque harum, recusandae dolore tenetur est?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem provident explicabo rerum accusamus. Totam a eligendi dolor veritatis nostrum quia, nemo exercitationem soluta repudiandae sint alias atque, laborum cumque in vel earum quas esse cupiditate. Itaque dolorem similique iste suscipit. Fugit molestias provident reiciendis quidem perferendis a explicabo amet minus rem! Possimus reprehenderit in laboriosam sequi laudantium, quam quos voluptatibus id, deleniti sed magni et, necessitatibus totam. Deleniti explicabo nam ad quaerat corporis atque voluptatem, incidunt ab temporibus quia! Expedita.
+            </p>
+        </div>
+        <div class="project">
+            <div class="project-img1">
+                <h3>Project-1</h3>
+            </div>
+            <div class="project-img2">
+                <h3>Project-2</h3>
+                
+            </div>
+            <div class="project-img3">
+                <h3>Project-3</h3>
+
+            </div>
+        </div>
+    </div>
+    <a name="technology"></a>
+    <h1>Technologies Used</h1>
+    <div class="content">
+        <div class="box" id="card-1">
+            <img src="./html_png.jpg" alt="HTML">
+            <h2>Introduction to HTML</h2>
+            <p>HTML is the standard markup language for Web pages. With HTML you can create your own Website. </p>
+            <a href="./html.html">Read more</a>
+        </div>
+
+
+        <div class="box" id="card-2">
+            <img src="./css_png.png" alt="CSS">
+            <h2>Introduction to CSS</h2>
+            <p>CSS is the language we use to style an HTML document. CSS describes how HTML elements should be displayed.</p>
+            <a href="./CSS.html">Read more</a>
+
+        </div>
+
+        <div class="box" id="card-3">
+            <img src="./javascript_png.jpg" alt="JavaScript">
+            <h2>Introduction to JavaScript</h2>
+            <p>JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. </p>
+            <a href="./JS.html">Read more</a>
+        </div>
+
+        <div class="box" id="card-4">
+            <img src="./bootstrap_png2.jpg" alt="Bootstrap">
+            <h2>Introduction to BootStrap</h2>
+            <p>Bootstrap is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.</p>
+            <a href="./Bootstrap.html">Read more</a>
+        </div>
+    </div>
+
+    <a name="contact"></a>
+    <h1>Contact us</h1>
+
+        <div class="contact">
+            
+            <div class="footer">
+                <p>Website template for Practical-8</p>
+             
+
+                   <a href="#top">Back to top</a>
+               
+            </div>
+        </div>
+</body>
+</html>
